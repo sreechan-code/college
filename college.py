@@ -14,7 +14,7 @@ def get_gemini_response(question):
     return response
 
 # Streamlit app setup with page title and header styling
-st.set_page_config(page_title="College Enquiry Chatbot", page_icon="🎓")
+st.set_page_config(page_title="College Inquiry Chatbot", page_icon="🎓")
 st.markdown(
     """
     <style>
