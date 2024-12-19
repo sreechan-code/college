@@ -14,10 +14,18 @@ def get_gemini_response(question):
     return response
 
 # Streamlit app setup with page title and header styling
-st.set_page_config(page_title="College Inquiry Chatbot", page_icon="🎓")
+st.set_page_config(page_title="College Enquiry Chatbot", page_icon="🎓")
 st.markdown(
     """
     <style>
+    /* Custom image positioning */
+    .top-image {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 10;
+    }
+
     /* Chatbot container styling */
     .chat-container {
         max-width: 800px;
@@ -25,6 +33,7 @@ st.markdown(
         padding: 20px;
         border-radius: 10px;
         background-color: #F8F9FA;
+        margin-top: 100px; /* Adjust for the header space */
     }
 
     /* Message bubbles */
@@ -65,6 +74,11 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+# Display the image at the top-left corner
+st.markdown('<div class="top-image">', unsafe_allow_html=True)
+st.image("image.png", width=350)  # Adjust the width as needed
+st.markdown('</div>', unsafe_allow_html=True)
 
 # Chatbot container with background and header
 st.markdown("<div class='chat-container'>", unsafe_allow_html=True)
